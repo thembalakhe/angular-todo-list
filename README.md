@@ -1,8 +1,5 @@
-## README.md
-
-### Todo List Application
-
-**Objective:**
+# Angular Todo List 
+### Todo List App
 
 This Angular-based application aims to create a functional todo list system with user authentication, registration, and robust task management capabilities. Users can create, update, and delete tasks, set priorities, and view deadlines.
 
