@@ -56,4 +56,4 @@ todo-list-app/
   - TypeScript
   - HTML
   - CSS
-  - [JSON Server] ([https://github.com/typicode/json-server](https://www.google.com/url?sa=E&source=gmail&q=https://github.com/typicode/json-server)) (Optional for storing user data)
+  - Firebase
