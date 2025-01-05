@@ -1,0 +1,41 @@
+<p>signup works!</p>
+
+<form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+
+  <div>
+    <label for="email">Username:</label>
+    <input id="username" formControlName="username" type="text" />
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email" type="email" />
+
+    <div *ngIf="f.email.touched && f.email.invalid">
+      <small *ngIf="f.email.errors?.['required']">Email is required</small>
+      <small *ngIf="f.email.errors?.['email']">Invalid email format</small>
+    </div>
+
+  </div>
+
+  <div>
+    <label for="password">Password:</label>
+    <input id="password" formControlName="password" type="password" />
+    
+    <div *ngIf="f.password.touched && f.password.invalid">
+      <small *ngIf="f.password.errors?.['required']">Password is required</small>
+      <small *ngIf="f.password.errors?.['minlength']">Password must be at least 6 characters</small>
+    </div>
+
+  </div>
+
+  <button type="submit" [disabled]="signupForm.invalid">Signup</button>
+  
+  <div *ngIf="errorMessage">{{ errorMessage }}</div>
+</form>
+
+<button (click)="onLogin()">Already have an account? Login</button>
+
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>

@@ -1,0 +1,45 @@
+<p>tasks-view works!</p>
+<div class="container">
+
+  <div class="inputs-container">
+    <input type=" text" placeholder="Add a task" [(ngModel)]="taskName" />
+    <input type="datetime-local" name="" id="" [(ngModel)]="taskDateTime">
+
+  </div>
+
+  <div class="select-item-type">
+    <select [(ngModel)]="taskPriority">
+      <option value="" disabled selected>Select Priority</option>
+      <option value="high"> High</option>
+      <option value="medium"> Medium</option>
+      <option value="low"> Low</option>
+    </select>
+    <button (click)="add()"> Add</button>
+  </div>
+
+  <!-- <div class="list-items-container">
+    <span *ngFor="let item of expenses" [ngClass]="item.expenseType" class="list-items">
+      {{item.expenseItem}}
+      {{item.amount}}
+    </span>
+  </div> -->
+
+  <!-- <button (click)="getTask()">get all tasks</button>
+  <button (click)="addTask()">add task</button> -->
+  <!-- <button (click)="deleteTask()">Delete task</button> -->
+  
+  <div *ngIf="todos;">
+    <ul>
+      <li *ngFor="let todo of todos">
+        <strong>Task ID:</strong> {{ todo.id }} <br>
+        <strong>Name:</strong> {{ todo.name }} <br>
+        <strong>Priority:</strong> {{ todo.priority }} <br>
+        <strong>Completed:</strong> {{ todo.completed }} <br>
+        <button (click)="deleteTask(todo.id)">Delete</button>
+        <button *ngIf="todo.completed == false;" (click)="isTaskComplete(todo.id, true)">Mark as Complete</button>
+        <hr>
+      </li>
+    </ul>
+  </div>
+
+</div>
